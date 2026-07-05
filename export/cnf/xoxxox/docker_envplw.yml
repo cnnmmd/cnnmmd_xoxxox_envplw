@@ -1,0 +1,16 @@
+networks:
+  default:
+    name: xoxxox_netmid
+    external: true
+services:
+  xoxxox_envplw:
+    image: xoxxox/envplw:001
+    container_name: xoxxox_envplw
+    env_file:
+      - ./envdir.txt
+    volumes:
+      - ../../../export:/opt/common
+      - ../../../vol000:/opt/vol000
+      - ../../../vol001:/opt/vol001:ro
+      - ../../../import/cnnmmd_xoxxox_envplw/envplw/plw:/opt/playwright
+    command: bash -c "/usr/sbin/sshd -D"
