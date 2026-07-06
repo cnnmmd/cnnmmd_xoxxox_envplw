@@ -13,5 +13,4 @@ services:
       - ../../../vol000:/opt/vol000
       - ../../../vol001:/opt/vol001:ro
       - ../../../import/cnnmmd_xoxxox_envplw/envplw/plw:/opt/playwright
-      - ../../../import/cnnmmd_xoxxox_envplw/envplw/msp:/root/.cache/ms-playwright
     command: bash -c "/usr/sbin/sshd -D"
