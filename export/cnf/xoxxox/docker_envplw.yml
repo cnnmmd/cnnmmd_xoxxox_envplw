@@ -6,11 +6,14 @@ services:
   xoxxox_envplw:
     image: xoxxox/envplw:001
     container_name: xoxxox_envplw
+    read_only: true
+    tmpfs:
+      - /tmp
     env_file:
       - ./envdir.txt
     volumes:
-      - ../../../export:/opt/common
-      - ../../../vol000:/opt/vol000
-      - ../../../vol001:/opt/vol001:ro
-      - ../../../import/cnnmmd_xoxxox_envplw/envplw/plw:/opt/playwright
+      - ../../../export:/opt/common:ro
+      - ../../../vol000:/opt/vol000:ro
+      - ../../../vol001:/opt/vol001
+      - ../../../import/cnnmmd_xoxxox_envplw/envplw/plw:/opt/playwright:ro
     command: bash -c "/usr/sbin/sshd -D"
