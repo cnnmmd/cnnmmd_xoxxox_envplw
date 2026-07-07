@@ -6,9 +6,9 @@ services:
   xoxxox_envplw:
     image: xoxxox/envplw:001
     container_name: xoxxox_envplw
-    read_only: true
-    tmpfs:
-      - /tmp
+    #read_only: true
+    #tmpfs:
+    #  - /tmp
     env_file:
       - ./envdir.txt
     volumes:
